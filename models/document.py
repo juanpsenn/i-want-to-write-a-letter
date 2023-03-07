@@ -16,7 +16,7 @@ class Document:
                 _value += ch
         return _value, subtracted
 
-    def is_writable(self, document: 'Document'):
+    def is_writable(self, document: 'Document') -> bool:
         counter = self.get_counter()
         doc_counter = document.get_counter()
         for ch, freq in counter.items():
@@ -25,7 +25,7 @@ class Document:
                 return False
         return True
 
-    def get_counter(self):
+    def get_counter(self) -> Counter:
         if not self.counter:
             self.counter = Counter(self.value)
         return self.counter
